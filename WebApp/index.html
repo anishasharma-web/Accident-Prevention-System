@@ -1,0 +1,110 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+<script src="webcam.js"></script>
+<script src="rps-dataset.js"></script>
+</head>
+<body>
+	<div class="nav">
+		<h1>SafeDrive : Your companion to prevent accidents</h1>
+	</div>
+	<div class="background-image">
+		<img src="./carill2.png" width="1610px">
+		<div class="background-image-overlay"></div>
+	</div>
+	<div class="body" id="particle-js">
+		<div class="container">
+			<div>
+				<div>
+					<video autoplay playsinline muted id="wc" width="274" height="274"></video>
+				</div>
+				<div class="prediction" id="prediction"></div>
+			</div>
+			<br>
+			<div id="inst" class="instruction-text">
+				Take your position & click on the buttons below to collect image samples.
+			</div>
+			<br>
+			<button
+				type="button"
+				class="button button-ok"
+				id="0" 
+				onclick="handleCaptureFrame(this)"
+			>
+				Awake
+			</button>
+			<button
+				type="button"
+				class="button button-warning"
+				id="1"
+				onclick="handleCaptureFrame(this)"
+			>
+				Potentially Sleepy
+			</button>
+			<button
+				type="button"
+				class="button button-danger"
+				id="2"
+				onclick="handleCaptureFrame(this)"
+			>
+				Head Down
+			</button>
+			<br><br>
+			<div id="safe-samples">Safe Samples: 0</div>
+			<div id="warning-amples">Warning Samples: 0</div>
+			<div id="danger-samples">Danger Samples: 0</div>
+			<br>
+
+			<button
+				type="button"
+				class="button button-default"
+				id="train"
+				onclick="doTraining()"
+			>
+				Train Network
+			</button>
+			
+			<div class="prediction-controls">
+				<div id="dummy">Once training is complete, click 'Start Predicting' to see predictions, and 'Stop Predicting' to end</div>
+				<br>
+
+				<button
+					type="button"
+					class="button button-default"
+					id="startPredicting"
+					onclick="startPredicting()"
+					disabled
+				>
+					Start Predicting
+				</button>
+				<button
+					type="button"
+					class="button button-default"
+					id="stopPredicting"
+					onclick="stopPredicting()"
+					disabled
+				>
+					Stop Predicting
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="footer" id="archive">
+		<h4>
+			Made by- Team Zenith, DTU
+		</h4>
+		<h4>
+			Batch- COE
+		</h4>
+		<h4>
+			Project for this Hackathon
+		</h4>
+	</div>
+</body>
+
+<script src="index.js"></script>
+</html>

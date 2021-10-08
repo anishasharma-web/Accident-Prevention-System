@@ -21,6 +21,6 @@ Tensorflow.js 2.0.0
 
 ## Our Contributors
 
-<a href="https://github.com/suyalamritanshu/Accident-Prevention-System">
+<a href="https://github.com/suyalamritanshu/Accident-Prevention-System/contributors">
   <img src="https://contrib.rocks/image?repo=suyalamritanshu/Accident-Prevention-System" />
 </a>

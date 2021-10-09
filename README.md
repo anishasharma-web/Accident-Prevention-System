@@ -10,13 +10,16 @@ Our goal is to introduce Artificial intelligence to solve this problem and creat
 
 ## Technologies Used
 
-Let's write down the languages we used, the libraries and its versions. 
-For example:
+These are the technologies used in this project:
 
 Bootstrap 3 or 4
+
 HTML 
+
 Javascript
+
 CSS
+
 Tensorflow.js 2.0.0
 
 ## Our Contributors
